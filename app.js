@@ -3,7 +3,10 @@
 // 題目：完成函數的內容，把傳進去的秒數變成平常人類看的懂的時間格式
 
 function humanReadableTimer(seconds) {
-  // 實作在這裡
+    const sec = (seconds % 60).toString().padStart('2',"0");
+    const min = (Math.floor(seconds / 60) % 60).toString().padStart('2',"0");
+    const hour = (Math.floor(seconds / 3600)).toString().padStart('2',"0");
+    return `${hour}:${min}:${sec}`;
 }
 
 console.log(humanReadableTimer(0)) // 印出 00:00:00
